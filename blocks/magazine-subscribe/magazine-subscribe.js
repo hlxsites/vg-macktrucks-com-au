@@ -1,6 +1,6 @@
 import {
   createElement, getTextLabel,
-} from '../../scripts/scripts.js';
+} from '../../scripts/common.js';
 
 export default async function decorate(block) {
   const children = block.querySelectorAll('p');

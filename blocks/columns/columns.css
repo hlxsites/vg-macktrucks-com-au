@@ -61,7 +61,7 @@ hr.column-underline {
 .columns.options h2 {
   padding: 42px;
   margin: 0;
-  background: var(--primary-black);
+  background: var(--c-primary-black);
   color: var(--primary-white);
   font-size: var(--body-font-size-xs);
   text-align: center;

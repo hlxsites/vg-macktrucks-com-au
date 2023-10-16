@@ -86,7 +86,7 @@ main .template.section.article-hero-container {
 .article-texts-container .default-content-subtitle {
   font-family: var(--emphasis-ff-bold);
   font-size: var(--heading-font-size-s);
-  color: var(--primary-black);
+  color: var(--c-primary-black);
   margin: 0 4px 10px;
 }
 

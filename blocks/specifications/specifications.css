@@ -5,7 +5,7 @@ main .section.specifications-container {
 .specs-section {
   display: flex;
   flex-direction: column;
-  border-top: 2px solid var(--primary-black);
+  border-top: 2px solid var(--c-primary-black);
 }
 
 .specs-list {
@@ -92,7 +92,7 @@ main .section.specifications-container {
 .specs-item p strong {
   font-family: var(--emphasis-ff-bold);
   font-size: var(--body-font-size-s);
-  color: var(--primary-black);
+  color: var(--c-primary-black);
   line-height: 1.2;
 }
 

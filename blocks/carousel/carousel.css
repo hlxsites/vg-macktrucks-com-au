@@ -14,7 +14,7 @@
 
 .block.carousel {
   position: relative;
-  background-color: var(--primary-black);
+  background-color: var(--c-primary-black);
 }
 
 .block.carousel ul.items {
@@ -202,7 +202,7 @@
   padding: 0;
   border: none;
   width: 100%;
-  background-color: var(--primary-black);
+  background-color: var(--c-primary-black);
   height: 100%;
   z-index: 1;
 }
@@ -235,7 +235,7 @@
   padding: 8px 0 16px;
   margin: 0;
   font-family: var(--emphasis-ff-bold);
-  color: var(--primary-black);
+  color: var(--c-primary-black);
 }
 
 .block.carousel .carousel-item-subheader {
@@ -244,7 +244,7 @@
   line-height: 14px;
   margin: 0;
   font-family: var(--emphasis-ff-bold);
-  color: var(--primary-black);
+  color: var(--c-primary-black);
 }
 
 @media screen and (min-width: 992px) {

@@ -2,7 +2,7 @@ import {
   getMetadata,
   createOptimizedPicture,
 } from '../../scripts/lib-franklin.js';
-import { createElement } from '../../scripts/scripts.js';
+import { createElement } from '../../scripts/common.js';
 
 async function buildArticleHero() {
   const title = getMetadata('og:title');

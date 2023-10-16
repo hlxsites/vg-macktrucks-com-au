@@ -3,7 +3,7 @@ main .section.download-specs-container {
 }
 
 .download-specs-section {
-  border-top: 2px solid var(--primary-black);
+  border-top: 2px solid var(--c-primary-black);
   padding-bottom: 125px;
 }
 
@@ -46,7 +46,7 @@ main .section.download-specs-container {
 .download-specs-item .anchor-element .p-element {
   font-family: var(--emphasis-ff-bold);
   font-size: var(--body-font-size-s);
-  color: var(--primary-black);
+  color: var(--c-primary-black);
   width: 75%;
   margin: 0 0 5px;
   padding: 0 50px 0 0;

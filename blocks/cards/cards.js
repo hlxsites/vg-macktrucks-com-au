@@ -1,5 +1,5 @@
 import { createOptimizedPicture } from '../../scripts/lib-franklin.js';
-import { createElement } from '../../scripts/scripts.js';
+import { createElement } from '../../scripts/common.js';
 
 const updateListElements = (ul, isDarkVar = false, isCTABlock = false) => {
   const lis = [...ul.children];

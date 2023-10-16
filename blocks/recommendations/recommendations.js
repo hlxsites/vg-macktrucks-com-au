@@ -1,4 +1,4 @@
-import { createElement, getTextLabel } from '../../scripts/scripts.js';
+import { createElement, getTextLabel } from '../../scripts/common.js';
 import { getAllArticles, getLimit, clearRepeatedArticles } from '../recent-articles/recent-articles.js';
 import {
   getMetadata,

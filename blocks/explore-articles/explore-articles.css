@@ -20,7 +20,7 @@
 
 .explore-articles-section .explore-articles-content fieldset {
   border: none;
-  border-bottom: 5px solid var(--primary-black);
+  border-bottom: 5px solid var(--c-primary-black);
   margin: 0;
   padding: 0;
 }
@@ -28,7 +28,7 @@
 .explore-articles-section .explore-articles-content .input-field {
   line-height: 25px;
   width: 100%;
-  border: 2px solid var(--primary-black);
+  border: 2px solid var(--c-primary-black);
   margin: 0 0 15px;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .explore-articles-articles .pagination .pagination-button {
-  color: var(--primary-black);
+  color: var(--c-primary-black);
   background-color: transparent;
   font-family: var(--emphasis-ff-bold);
   margin: 0 5px;

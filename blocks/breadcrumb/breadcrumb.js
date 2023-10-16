@@ -1,4 +1,4 @@
-import { createElement } from '../../scripts/scripts.js';
+import { createElement } from '../../scripts/common.js';
 
 export default function decorate(block) {
   const breadcrumbItems = createElement('ul', 'breadcrumb-list');

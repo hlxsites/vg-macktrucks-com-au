@@ -1,4 +1,4 @@
-import { createElement } from '../../scripts/scripts.js';
+import { createElement } from '../../scripts/common.js';
 import fragmentBlock from '../fragment/fragment.js';
 
 /* Function checks if the content of the provied element is just a link to other doc */

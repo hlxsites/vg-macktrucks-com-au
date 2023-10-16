@@ -1,4 +1,4 @@
-import { createElement, getTextLabel } from '../../scripts/scripts.js';
+import { createElement, getTextLabel } from '../../scripts/common.js';
 import { createOptimizedPicture, getOrigin } from '../../scripts/lib-franklin.js';
 
 const sectionTitle = getTextLabel('Recent article text');

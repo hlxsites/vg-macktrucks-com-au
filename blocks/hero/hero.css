@@ -171,7 +171,7 @@ main .hero .hero-content-wrapper p:not(.button-container) {
 }
 
 .hero .hero-content-container:has(.hero-video) {
-    background-color: var(--primary-black);
+    background-color: var(--c-primary-black);
 }
 
 /* Rule just for magazine listing page */
@@ -219,7 +219,7 @@ main .hero.specs .hero-content-wrapper p {
 }
 
 main .hero.specs .hero-content-wrapper h1 {
-    color: var(--primary-black);
+    color: var(--c-primary-black);
     font-family: var(--emphasis-ff-bold);
     font-size: var(--nav-height-m);
     width: 100%;
@@ -305,7 +305,7 @@ main .hero.magazine .hero-content-wrapper {
     height: unset;
     max-width: fit-content;
     width: 100%;
-    color: var(--primary-black);
+    color: var(--c-primary-black);
     margin: 66px 70px 50px;
     row-gap: 0;
 }
@@ -313,7 +313,7 @@ main .hero.magazine .hero-content-wrapper {
 main .hero.magazine .hero-content-wrapper h1 {
     font-family: var(--emphasis-ff-bold);
     font-size: var(--heading-font-size-xxl);
-    color: var(--primary-black);
+    color: var(--c-primary-black);
 }
 
 main .hero.magazine .hero-content-wrapper p {
@@ -340,13 +340,13 @@ main .hero.magazine .hero-content-wrapper a:hover {
     main .hero.magazine .hero-content-container {
         flex-direction: row;
         justify-content: space-around;
-        background-color: var(--primary-black);
+        background-color: var(--c-primary-black);
     }
 
     main .hero.magazine .hero-content-media {
         width: 45vw;
         max-width: 800px;
-        background-color: var(--primary-black);
+        background-color: var(--c-primary-black);
         padding: 50px 5vw;
     }
 
@@ -408,7 +408,7 @@ main .hero.magazine-categories em {
 
 /* hero columns variant */
 .hero.hero-columns {
-  background-color: var(--primary-black);
+  background-color: var(--c-primary-black);
   padding: 32px 0;
 }
 
