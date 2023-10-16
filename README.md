@@ -1,5 +1,5 @@
 # Mack Trucks
-Franklin site for macktrucks.co-nz
+Franklin site for macktrucks.co.nz
 
 ## Environments
 - Preview: https://main--vg-macktrucks-co-nz--hlxsites.hlx.page/
