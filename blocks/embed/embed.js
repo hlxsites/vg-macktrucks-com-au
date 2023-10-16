@@ -3,8 +3,6 @@ import {
   createLowResolutionBanner, videoTypes,
 } from '../../scripts/video-helper.js';
 
-
-
 export default function decorate(block) {
   const { youtube, local, both } = videoTypes;
   const isAutoplay = block.classList.contains('autoplay');
