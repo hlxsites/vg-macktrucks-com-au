@@ -184,7 +184,7 @@
 
   .facet-template-container-custom .pill-container .pill {
     font-size: 16px;
-    background-color: var(--primary-black);
+    background-color: var(--c-primary-black);
     color: #fff;
     margin-left: 10px !important;
     border-radius: 0 !important;
@@ -1289,7 +1289,7 @@
   top: 0;
   right: 0;
   height: 64px;
-  background: var(--primary-black);
+  background: var(--c-primary-black);
   cursor: pointer;
 }
 

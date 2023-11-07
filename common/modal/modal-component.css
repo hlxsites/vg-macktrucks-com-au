@@ -163,7 +163,7 @@
 }
 
 .modal-content.modal-form.modal-red .eloqua-form input[type="submit"] {
-  background: var(--primary-black);
+  background: var(--c-primary-black);
   color: var(--primary-white);
 }
 

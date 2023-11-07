@@ -1,6 +1,5 @@
-import {
-  createElement, getTextLabel, isEloquaFormAllowed, loadScriptIfNotLoadedYet,
-} from '../../scripts/scripts.js';
+import { loadScriptIfNotLoadedYet } from '../../scripts/scripts.js';
+import { createElement, getTextLabel, isEloquaFormAllowed } from '../../scripts/common.js';
 
 // Every eloqua form has it's own JS, CSS and HTML.
 // Once the form is loaded all the JS and CSS are added to the body.

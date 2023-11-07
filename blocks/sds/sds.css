@@ -41,7 +41,7 @@
 }
 
 .block.sds .column-header .cell {
-  background-color: var(--primary-black);
+  background-color: var(--c-primary-black);
   color: var(--primary-white);
 }
 
@@ -113,7 +113,7 @@
 }
 
 .block.sds .column-header-mobile select {
-  background-color: var(--primary-black);
+  background-color: var(--c-primary-black);
   color: var(--primary-white);
   width: 100%;
   padding: 15px;

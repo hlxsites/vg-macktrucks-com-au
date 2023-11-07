@@ -31,7 +31,7 @@ main .section.breadcrumb-container {
 }
 
 .breadcrumb-current {
-  color: var(--primary-black);
+  color: var(--c-primary-black);
   text-transform: capitalize;
 }
 

@@ -1,4 +1,4 @@
-import { createElement } from '../../scripts/scripts.js';
+import { createElement } from '../../scripts/common.js';
 
 const buildRegularDownloadBlock = (block) => {
   const children = [...block.children];

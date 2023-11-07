@@ -1,6 +1,5 @@
-import {
-  createElement, decorateButtons, getTextLabel, getAllElWithChildren, loadAsBlock,
-} from '../../scripts/scripts.js';
+import { createElement, getTextLabel } from '../../scripts/common.js';
+import { decorateButtons, getAllElWithChildren, loadAsBlock } from '../../scripts/scripts.js';
 
 const MQ = window.matchMedia('(min-width: 1140px)');
 const subscribeText = getTextLabel('SUBSCRIBE TO BULLDOG');

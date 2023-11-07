@@ -2,7 +2,7 @@
   background-image: url('../../media/find-dealer-map-1280x304.webp');
   background-repeat: no-repeat;
   background-size: 100%;
-  background-color: var(--primary-black);
+  background-color: var(--c-primary-black);
 }
 
 .section.find-dealer-container {

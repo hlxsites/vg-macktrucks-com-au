@@ -21,7 +21,7 @@
 .tabs-tab-titles ul li:focus,
 .tabs-tab-titles ul li:focus-visible,
 .tabs-tab-titles ul li:hover {
-  box-shadow: 0 2px var(--primary-black);
+  box-shadow: 0 2px var(--c-primary-black);
 }
 
 /* ITEMS */

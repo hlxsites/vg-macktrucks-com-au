@@ -1,4 +1,4 @@
-import { createElement } from '../../scripts/scripts.js';
+import { createElement } from '../../scripts/common.js';
 import { autosuggestQuery, fetchData } from './search-api.js';
 
 const autoSuggestClass = 'autosuggest-results-item-highlighted';

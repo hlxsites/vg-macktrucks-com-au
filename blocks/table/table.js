@@ -1,4 +1,4 @@
-import { createElement } from '../../scripts/scripts.js';
+import { createElement } from '../../scripts/common.js';
 
 export default async function decorate(block) {
   const headings = block.querySelectorAll('table h1, table h2, table h3, table h4, table h5, table h6');

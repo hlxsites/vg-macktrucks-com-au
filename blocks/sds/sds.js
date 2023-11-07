@@ -1,4 +1,4 @@
-import { createElement } from '../../scripts/scripts.js';
+import { createElement } from '../../scripts/common.js';
 
 function newId() {
   return (Math.random() + 1).toString(36).substring(7);

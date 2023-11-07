@@ -28,7 +28,7 @@
 }
 
 .recent-articles-first-item a {
-  color: var(--primary-black);
+  color: var(--c-primary-black);
 }
   
 .recent-articles-first-item .recent-articles-first-category {
@@ -98,7 +98,7 @@
 .recent-articles-rest-item .recent-articles-rest-title {
   font-family: var(--emphasis-ff-bold); 
   font-size: var(--heading-font-size-xs);
-  color: var(--primary-black);
+  color: var(--c-primary-black);
   font-weight: bolder;
   word-wrap: break-word;
   max-width: 90%;

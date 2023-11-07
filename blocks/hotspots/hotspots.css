@@ -2,7 +2,7 @@
 
 .section.hotspots-container {
   padding: unset;
-  background-color: var(--primary-black);
+  background-color: var(--c-primary-black);
   width: 100%;
   color: var(--primary-white);
 }
@@ -53,7 +53,7 @@
 }
 
 .hotspots-container .hotspot .hotspot-content.invert {
-  color: var(--primary-black);
+  color: var(--c-primary-black);
 }
 
 .hotspots-container .hotspot .hotspot-content h1,
@@ -79,7 +79,7 @@
 }
 
 .hotspots-container .text-black .hotspot-content * {
-  color: var(--primary-black);
+  color: var(--c-primary-black);
 }
 
 .hotspots-container .text-white .hotspot-content * {

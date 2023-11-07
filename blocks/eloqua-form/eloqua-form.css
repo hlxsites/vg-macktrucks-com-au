@@ -23,7 +23,7 @@
   max-width: none;
   background-color: var(--primary-white);
   border: 1px solid #666;
-  color: var(--primary-black);
+  color: var(--c-primary-black);
   padding: 11px 18px;
   font-size: 14px;
   line-height: 18px;
@@ -38,7 +38,7 @@
 .eloqua-form .elq-form input::placeholder,
 .eloqua-form .elq-form select::placeholder,
 .eloqua-form .elq-form textarea ::placeholder {
-  color: var(--primary-black);
+  color: var(--c-primary-black);
 }
 
 .eloqua-form input[type="submit"] {

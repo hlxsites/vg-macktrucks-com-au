@@ -13,7 +13,7 @@
 
 .block.sub-nav {
   background-color: var(--primary-white);
-  color: var(--primary-black);
+  color: var(--c-primary-black);
   transition: translate 1s;
   position: relative;
 }
@@ -76,7 +76,7 @@
 }
 
 .sub-nav-container a {
-  color: var(--primary-black);
+  color: var(--c-primary-black);
 }
 
 .sub-nav-container li {
@@ -257,7 +257,7 @@ header:has(nav[aria-expanded="true"]) .sub-nav-container {
 
   .sub-nav-container li.active,
   .sub-nav-container li:has(a:not(.button):hover) {
-    box-shadow: inset 0 -2px var(--primary-black);
+    box-shadow: inset 0 -2px var(--c-primary-black);
   }
 
   .sub-nav-container :is(.sub-nav-title, li) {

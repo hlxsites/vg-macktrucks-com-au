@@ -126,7 +126,7 @@
 .magazine-categories.recommendations-container .recommendations-text-content .recommendations-link,
 .magazine-categories.recommendations-container .recommendations-text-content .recommendations-truck {
   display: flex;
-  color: var(--primary-black);
+  color: var(--c-primary-black);
   line-height: 22px;
 }
 
