@@ -8,7 +8,7 @@ export default function decorate(block) {
     if (cell.querySelector('picture')) {
       cell.classList.add('text-on-image-column');
     } else {
-      const textCol = createElement('div', ['text-wrapper']);
+      const textCol = createElement('div', { classes: ['text-wrapper'] });
       textCol.innerHTML = cell.innerHTML;
       cell.innerHTML = '';
       cell.appendChild(textCol);

@@ -1,6 +1,6 @@
 /* TITLES */
 .tabs-tab-titles {
-  font-family: var(--emphasis-ff-bold);
+  font-family: var(--ff-body-bold);
 }
 
 .tabs-tab-titles ul {
@@ -33,7 +33,7 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  border-block-start: 2px solid var(--secondary-silver);
+  border-block-start: 2px solid var(--c-secondary-silver);
 }
 
 .tabs-tab-item.active > div {

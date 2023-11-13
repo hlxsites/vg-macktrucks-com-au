@@ -1,11 +1,14 @@
 import { getAllElWithChildren } from '../../scripts/scripts.js';
 import { createElement } from '../../scripts/common.js';
 import {
-  addVideoShowHandler, isVideoLink, selectVideoLink, wrapImageWithVideoLink,
+  addVideoShowHandler,
+  isVideoLink,
+  selectVideoLink,
+  wrapImageWithVideoLink,
 } from '../../scripts/video-helper.js';
 
 const decorateUnderline = (col) => {
-  const hr = createElement('hr', 'column-underline');
+  const hr = createElement('hr', { classes: 'column-underline' });
   const u = col.querySelector('u');
   if (!u) {
     const strong = col.firstElementChild.querySelector('strong');
