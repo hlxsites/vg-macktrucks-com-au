@@ -1,7 +1,7 @@
 {
-  "total": 26,
+  "total": 43,
   "offset": 0,
-  "limit": 26,
+  "limit": 43,
   "data": [
     {
       "Key": "Low resolution video message",
@@ -88,10 +88,6 @@
       "Text": "channel"
     },
     {
-      "Key": "Open Gallery",
-      "Text": "Open Gallery"
-    },
-    {
       "Key": "no eloqua message",
       "Text": "We cannot show the content because you have not given us permission to store cookie files"
     },
@@ -102,26 +98,22 @@
     {
       "Key": "vinlabel",
       "Text": "Enter your 17-digit VIN (Vehicle Identification Number)"
-    }, 
-    {
-      "Key": "submit",
-      "Text": "Submit"
-    }, 
+    },
     {
       "Key": "vinformat",
-      "Text": "Please provide correct vin number format"
-    }, 
+      "Text": "The VIN entered is not valid for Mack Truck vehicles"
+    },
     {
       "Key": "result text",
       "Text": "${count} recalls available for \"${vin}\" VIN"
-    }, 
+    },
     {
       "Key": "recalls",
       "Text": "Recalls"
     },
     {
       "Key": "recall_date",
-      "Text": "Issue date"
+      "Text": "Issue Date"
     },
     {
       "Key": "recall_description",
@@ -134,7 +126,7 @@
     {
       "Key": "remedy_description",
       "Text": "Remedy"
-    }, 
+    },
     {
       "Key": "published_info",
       "Text": "Information last updated"
@@ -150,14 +142,14 @@
     {
       "Key": "recall_incomplete",
       "Text": "Recall Incomplete"
-    }, 
+    },
     {
       "Key": "recall_incomplete_no_remedy",
-      "Text": "Recall In Complete, remedy not available"
-    }, 
+      "Text": "Recall Incomplete, remedy not available"
+    },
     {
       "Key": "loading recalls",
-      "Text": " Loading Recalls ....."
+      "Text": "Loading recalls"
     },
     {
       "Key": "no recalls",
@@ -166,22 +158,22 @@
     {
       "Key": "mfr_notes",
       "Text": "Next steps"
-    }, 
+    },
+    {
+      "Key": "submit",
+      "Text": "Submit"
+    },
     {
       "Key": "mfr_recall_number",
       "Text": "Brand Recall Number"
-    }, 
+    },
     {
       "Key": "nhtsa_recall_number",
-      "Text": "NHTSA recall number"
+      "Text": "NHTSA Recall Number"
     },
     {
       "Key": "recall_oldest_info",
-      "Text": "Recall information available since: Jan 15,2008"
-    },
-    {
-      "Key": "All trucks",
-      "Text": "All trucks"
+      "Text": "Recall information available since: Jan 15, 2008"
     }
   ],
   ":type": "sheet"

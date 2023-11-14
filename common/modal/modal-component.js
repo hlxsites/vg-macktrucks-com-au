@@ -1,7 +1,7 @@
 import { loadCSS } from '../../scripts/lib-franklin.js';
+import { createElement } from '../../scripts/common.js';
 // eslint-disable-next-line import/no-cycle
 import { createIframe } from '../../scripts/video-helper.js';
-import { createElement } from '../../scripts/common.js';
 
 const styles$ = new Promise((r) => {
   loadCSS(`${window.hlx.codeBasePath}/common/modal/modal-component.css`, r);

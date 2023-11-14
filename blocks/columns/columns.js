@@ -1,11 +1,11 @@
+import { getAllElWithChildren } from '../../scripts/scripts.js';
+import { createElement } from '../../scripts/common.js';
 import {
   addVideoShowHandler,
   isVideoLink,
   selectVideoLink,
   wrapImageWithVideoLink,
 } from '../../scripts/video-helper.js';
-import { createElement } from '../../scripts/common.js';
-import { getAllElWithChildren } from '../../scripts/scripts.js';
 
 const decorateUnderline = (col) => {
   const hr = createElement('hr', { classes: 'column-underline' });
