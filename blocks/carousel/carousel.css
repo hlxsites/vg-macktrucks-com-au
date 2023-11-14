@@ -215,7 +215,7 @@
   padding-bottom: 20px;
   font-size: 16px;
   line-height: 21px;
-  color: var(--primary-white);
+  color: var(--c-primary-white);
 }
 
 .block.carousel .items picture {
@@ -234,7 +234,7 @@
   line-height: 32px;
   padding: 8px 0 16px;
   margin: 0;
-  font-family: var(--emphasis-ff-bold);
+  font-family: var(--ff-body-bold);
   color: var(--c-primary-black);
 }
 
@@ -243,7 +243,7 @@
   padding-top: 10px;
   line-height: 14px;
   margin: 0;
-  font-family: var(--emphasis-ff-bold);
+  font-family: var(--ff-body-bold);
   color: var(--c-primary-black);
 }
 
@@ -286,7 +286,7 @@
 .block.carousel.two-columns .carousel-item-text p,
 .block.carousel.two-columns .carousel-item-header,
 .block.carousel.two-columns .carousel-item-subheader {
-  color: var(--primary-white);
+  color: var(--c-primary-white);
 }
 
 .block.carousel.two-columns .desktop-controls {
@@ -387,9 +387,9 @@
 }
 
 .block.carousel.cards-variant .carousel-item-text h2 {
-  font-family: var(--emphasis-ff-bold);
+  font-family: var(--ff-body-bold);
   font-size: 14px;
-  color: var(--primary-white);
+  color: var(--c-primary-white);
   margin: 5px 0 10px;
   padding: 0;
   line-height: 14px;

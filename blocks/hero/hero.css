@@ -1,10 +1,10 @@
-/* stylelint-disable */
+/* stylelint-disable no-descending-specificity */
 
 /* auto and non-auto block shared styles */
 :root {
-  --hero-header-ff: var(--emphasis-ff-heavy);
-  --hero-text-ff: var(--subheadings-ff-medium);
-  --hero-btn-ff: var(--emphasis-ff-bold);
+  --hero-header-ff: var(--ff-helvetica-heavy);
+  --hero-text-ff: var(--ff-subheadings-medium);
+  --hero-btn-ff: var(--ff-body-bold);
   --hero-text-size: 20px;
 }
 
@@ -26,7 +26,7 @@ main .hero h1 {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    color: var(--primary-white);
+    color: var(--c-primary-white);
 }
 
 main .hero :is(h1, h2) {
@@ -64,7 +64,7 @@ main .hero:not(.auto-block) > div {
     position: absolute;
     inset: 0;
     margin: -32px;
-    color: var(--primary-white);
+    color: var(--c-primary-white);
 }
 
 .hero .hero-content-wrapper {
@@ -220,8 +220,8 @@ main .hero.specs .hero-content-wrapper p {
 
 main .hero.specs .hero-content-wrapper h1 {
     color: var(--c-primary-black);
-    font-family: var(--emphasis-ff-bold);
-    font-size: var(--nav-height-m);
+    font-family: var(--ff-body-bold);
+    font-size: 60px;
     width: 100%;
     margin: 50px auto;
 }
@@ -235,7 +235,7 @@ main .hero.specs .hero-content-wrapper h1::after {
 
 @media (min-width: 650px) {
     main .hero.specs .hero-content-wrapper h1 {
-        font-size: var(--nav-height-l);
+        font-size: 85px;
     }
 
     main .hero.specs {
@@ -271,7 +271,7 @@ main .hero.specs .hero-content-wrapper h1::after {
 
 /* MAGAZINE hero styling  */
 main .hero.magazine {
-    background-color: var(--primary-white);
+    background-color: var(--c-primary-white);
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -288,7 +288,7 @@ main .hero.magazine .hero-content-container {
 }
 
 main .hero.magazine .hero-content-media {
-    background-color: var(--primary-white);
+    background-color: var(--c-primary-white);
 }
 
 main .hero.magazine .hero-content-media p {
@@ -311,13 +311,13 @@ main .hero.magazine .hero-content-wrapper {
 }
 
 main .hero.magazine .hero-content-wrapper h1 {
-    font-family: var(--emphasis-ff-bold);
+    font-family: var(--ff-body-bold);
     font-size: var(--heading-font-size-xxl);
     color: var(--c-primary-black);
 }
 
 main .hero.magazine .hero-content-wrapper p {
-    font-family: var(--subheadings-ff-medium);
+    font-family: var(--ff-subheadings-medium);
     font-size: var(--body-font-size-xl);
     height: auto;
 }
@@ -327,7 +327,7 @@ main .hero.magazine .hero-content-wrapper p:first-of-type {
 }
 
 main .hero.magazine .hero-content-wrapper a {
-    font-family: var(--emphasis-ff-bold);
+    font-family: var(--ff-body-bold);
     font-size: var(--body-font-size-xs);
     margin: 0;
 }
@@ -351,13 +351,13 @@ main .hero.magazine .hero-content-wrapper a:hover {
     }
 
     main .hero.magazine .hero-content-wrapper {
-        color: var(--primary-white);
+        color: var(--c-primary-white);
         width: 50%;
         max-width: 500px;
     }
 
     main .hero.magazine .hero-content-wrapper h1 {
-        color: var(--primary-white);
+        color: var(--c-primary-white);
     }
 }
 

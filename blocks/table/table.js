@@ -5,7 +5,7 @@ export default async function decorate(block) {
 
   headings.forEach((heading) => {
     // unifing headings
-    const newHeading = createElement('h5', 'table-cell-heading');
+    const newHeading = createElement('h5', { classes: 'table-cell-heading' });
     newHeading.innerHTML = heading.innerHTML;
     heading.replaceWith(newHeading);
     newHeading.closest('tr')?.classList.add('table-heading');

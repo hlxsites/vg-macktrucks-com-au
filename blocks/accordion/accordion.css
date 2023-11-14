@@ -19,7 +19,7 @@
 
 .accordion .accordion-header-button h2 {
   margin: 0;
-  font-family: var(--emphasis-ff-bold);
+  font-family: var(--ff-body-bold);
   font-size: 14px;
   line-height: 15px;
 }
@@ -27,7 +27,7 @@
 .accordion .accordion-header-button .accordion-close {
   width: 40px;
   height: 40px;
-  background-color: var(--primary-white);
+  background-color: var(--c-primary-white);
   border: 2px solid var(--c-primary-black);
   border-radius: 50%;
   margin-left: 14px;
@@ -55,7 +55,7 @@
 
 .accordion .accordion-content p,
 .accordion .accordion-content {
-  font-family: var(--body-ff);
+  font-family: var(--ff-body);
   font-size: 11px;
   line-height: 15px;
   opacity: 1;
@@ -75,7 +75,7 @@
 
 .accordion .accordion-content a {
   color: var(--c-primary-black);
-  font-family: var(--emphasis-ff-bold);
+  font-family: var(--ff-body-bold);
   font-size: var(--body-font-size-s);
   line-height: 16px;
 }

@@ -28,7 +28,7 @@ export function fetchAutosuggest(term, autosuggestEle, rowEle, func) {
 
       if (terms.length) {
         terms.forEach((val) => {
-          const row = createElement(rowEle.tag, rowEle.class, rowEle.props);
+          const row = createElement(rowEle.tag, { classes: rowEle.class, props: rowEle.props });
           const suggestFragment = fragmentRange
             .createContextualFragment(`<b>
             ${val}
