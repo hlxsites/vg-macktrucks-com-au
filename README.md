@@ -1,9 +1,9 @@
 # Mack Trucks
-Franklin site redesign for macktrucks.com.au
+Franklin site for macktrucks.co.nz
 
 ## Environments
-- Preview: https://main--vg-macktrucks-com-au--hlxsites.hlx.page/
-- Live: https://main--vg-macktrucks-com-au--hlxsites.hlx.live/
+- Preview: https://main--vg-macktrucks-co-nz--hlxsites.hlx.page/
+- Live: https://main--vg-macktrucks-co-nz--hlxsites.hlx.live/
 
 ## Installation
 

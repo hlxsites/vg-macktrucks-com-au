@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-cycle
 import { sampleRUM, loadScript } from './lib-franklin.js';
 
 const COOKIES = {
