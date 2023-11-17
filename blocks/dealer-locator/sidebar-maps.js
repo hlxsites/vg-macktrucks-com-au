@@ -92,6 +92,7 @@ var uptimeClicked = false;
 $electricDealer = false;
 $hoverText = $('#hoverText').val();
 $country = window.locatorConfig.country;
+var isLocationOFF = false;
 
 // Google callback letting us know maps is ready to be used
 (function () {
@@ -1388,8 +1389,7 @@ $.fn.deleteCookie = function (name) {
   document.cookie = name + '=; Max-Age=-99999999;';
 }
 
-$.fn.sortedPins = function () {
-
+$.fn.sortedPins = function (isLocationOff = false) {
   $pinLength = $pins.length;
 
   for (var i = 0; i < $pinLength; i++) {
@@ -1402,10 +1402,12 @@ $.fn.sortedPins = function () {
   $sortedPins = $pins;
 
   $sortedPins.sort(function (a, b) {
-    return parseFloat(a.distance) - parseFloat(b.distance);
+    return isLocationOff
+      ? a.COMPANY_DBA_NAME.localeCompare(b.COMPANY_DBA_NAME)
+      : parseFloat(a.distance) - parseFloat(b.distance);
   });
 
-  $sortedPins.filter(function (i, n) {
+  $sortedPins.filter(function (i) {
     $.fn.showPin(i);
   });
 
@@ -1680,7 +1682,7 @@ $.fn.filterNearbyPins = function () {
 
   // First get the full details of our locations
   var tmpPinList = [];
-  var sorted = $.fn.sortedPins();
+  var sorted = $.fn.sortedPins(isLocationOFF);
 
   $nearbyPins.forEach(function (pin) {
     tmpPinList.push($.grep(sorted, function (v, i) {
@@ -1689,7 +1691,9 @@ $.fn.filterNearbyPins = function () {
   });
 
   tmpPinList.sort(function (a, b) {
-    return parseFloat(a.distance) - parseFloat(b.distance);
+    return isLocationOFF
+    ? a.COMPANY_DBA_NAME.localeCompare(b.COMPANY_DBA_NAME)
+    : parseFloat(a.distance) - parseFloat(b.distance);
   });
   $("#filterUptime,#filterElectricDealer,#filterDealer").css("cursor", "pointer");
   $('.no-dealer-text').hide();
@@ -2669,6 +2673,10 @@ $.fn.handleLocationError = function (browserHasGeolocation, infoWindow, pos) {
   if (!browserHasGeolocation) {
     alert('Error: Your browser doesn\'t support geolocation.');
   } else {
+    console.log('%cError:%c The Geolocation service failed. Check your browser if Geolocation is enabled.'
+      , 'color: white; font-weight: bold; background-color: red', 'color: default; font-weight: normal;');
+    // sort pins Alphabetically by Brand Name if Geolocation is disabled
+    isLocationOFF = true;
     $('.loading-overlay').css('display', 'none');
     $('.waiting-overlay').css('display', 'block');
   }
