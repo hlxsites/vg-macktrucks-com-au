@@ -343,8 +343,6 @@ $.fn.initGoogleMaps = function () {
 };
 
 $.fn.loadPins = function () {
-
-
   $nearbyPins = [];
 
   let dealers;
@@ -2289,12 +2287,6 @@ $.fn.setAddress2 = function () {
 
         // Sort pins by distance (miles)
         $.fn.sortedPins();
-
-        // Set default sidebar pane
-        $.fn.switchSidebarPane('sidebar-pins');
-
-
-
       } else {
         $radius.setCenter({ lat: parseFloat(pos.lat), lng: parseFloat(pos.lng) });
         $.fn.filterRadius();
@@ -2398,12 +2390,6 @@ $.fn.setAddress = function () {
 
         // Sort pins by distance (miles)
         $.fn.sortedPins();
-
-        // Set default sidebar pane
-        $.fn.switchSidebarPane('sidebar-pins');
-
-
-
       } else {
         $radius.setCenter({ lat: parseFloat(pos.lat), lng: parseFloat(pos.lng) });
         $.fn.filterRadius();
@@ -2450,17 +2436,6 @@ $.fn.setLocation = function (e) {
             radius: $.fn.milesInMeters($('#range').val())
           });
         }
-
-        // Load pins into client cache
-        $.fn.loadPins();
-
-        // Sort pins be distance (miles)
-        $.fn.sortedPins();
-
-        // Set default sidebar pane
-        $.fn.switchSidebarPane('sidebar-pins');
-
-
       } else {
 
         $me.setPosition({ lat: parseFloat(pos.lat), lng: parseFloat(pos.lng) });
