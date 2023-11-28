@@ -104,7 +104,7 @@ var isLocationOFF = false;
         lat: defaultCenterCoords.lat,
         lng: defaultCenterCoords.lng
       },
-      zoom: 4,
+      zoom: 8,
       mapTypeControl: false,
       streetViewControl: false,
       fullscreenControl: false,
