@@ -92,7 +92,7 @@ var uptimeClicked = false;
 $electricDealer = false;
 $hoverText = $('#hoverText').val();
 $country = window.locatorConfig.country;
-var isLocationOFF = false;
+var isLocationOFF = true;
 
 // Google callback letting us know maps is ready to be used
 (function () {
@@ -2407,7 +2407,7 @@ $.fn.setLocation = function (e) {
   if (navigator.geolocation) {
 
     navigator.geolocation.getCurrentPosition(function (position) {
-
+      isLocationOFF = false;
       var pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
