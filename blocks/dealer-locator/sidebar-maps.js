@@ -1569,6 +1569,9 @@ $.fn.tmpPins = function (tmpPinList) {
     $("<div/>", {
       'html': templateClone,
       'click': function () {
+        // look into a child element with class teaser-top and get the data-id attribute
+        var id = $(this).find('.teaser-top').attr('data-id');
+        $.fn.switchSidebarPane('sidebar-pin', id);
       },
       'mouseenter': function () {
 
