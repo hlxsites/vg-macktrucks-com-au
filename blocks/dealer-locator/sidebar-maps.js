@@ -92,7 +92,7 @@ var uptimeClicked = false;
 $electricDealer = false;
 $hoverText = $('#hoverText').val();
 $country = window.locatorConfig.country;
-var isLocationOFF = false;
+var isLocationOFF = true;
 
 // Google callback letting us know maps is ready to be used
 (function () {
@@ -104,7 +104,7 @@ var isLocationOFF = false;
         lat: defaultCenterCoords.lat,
         lng: defaultCenterCoords.lng
       },
-      zoom: 4,
+      zoom: 8,
       mapTypeControl: false,
       streetViewControl: false,
       fullscreenControl: false,
@@ -1569,6 +1569,9 @@ $.fn.tmpPins = function (tmpPinList) {
     $("<div/>", {
       'html': templateClone,
       'click': function () {
+        // look into a child element with class teaser-top and get the data-id attribute
+        var id = $(this).find('.teaser-top').attr('data-id');
+        $.fn.switchSidebarPane('sidebar-pin', id);
       },
       'mouseenter': function () {
 
@@ -2407,7 +2410,7 @@ $.fn.setLocation = function (e) {
   if (navigator.geolocation) {
 
     navigator.geolocation.getCurrentPosition(function (position) {
-
+      isLocationOFF = false;
       var pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude

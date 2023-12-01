@@ -1857,7 +1857,8 @@ main .section.dealer-locator-container > div {
 .dealer-locator .sidebar .panel-card .panel-container {
     display: block;
     width: 100%;
-    position: relative
+    position: relative;
+    cursor: pointer;
 }
 
 .dealer-locator .sidebar .panel-card .panel-container ul {
