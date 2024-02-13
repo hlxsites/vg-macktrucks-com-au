@@ -15,7 +15,7 @@ const isPerformanceAllowed = cookieSetting.includes(COOKIES.performance);
 const isSocialAllowed = cookieSetting.includes(COOKIES.social);
 
 if (isPerformanceAllowed) {
-  loadGoogleTagManager();
+  // loadGoogleTagManager(); // FIXME - this is a workaround for the delayed loading of GTM
   loadHotjar();
 }
 
@@ -24,7 +24,7 @@ if (isSocialAllowed) {
 }
 
 // add more delayed functionality here
-
+loadGoogleTagManager(); // FIXME - this is a workaround for the delayed loading of GTM
 // Prevent the cookie banner from loading when running in library
 if (!window.location.pathname.includes('srcdoc')
   && !['localhost', 'hlx.page'].some((url) => window.location.host.includes(url))) {
