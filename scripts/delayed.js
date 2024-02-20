@@ -6,16 +6,19 @@ const COOKIES = {
   social: 'C0005:1',
 };
 
+// check if the active campaign is running
+const activeCampaign = true;
+
 // Core Web Vitals RUM collection
 sampleRUM('cwv');
 
 const cookieSetting = decodeURIComponent(document.cookie.split(';')
   .find((cookie) => cookie.trim().startsWith('OptanonConsent=')));
-const isPerformanceAllowed = cookieSetting.includes(COOKIES.performance);
-const isSocialAllowed = cookieSetting.includes(COOKIES.social);
+const isPerformanceAllowed = activeCampaign || cookieSetting.includes(COOKIES.performance);
+const isSocialAllowed = activeCampaign || cookieSetting.includes(COOKIES.social);
 
 if (isPerformanceAllowed) {
-  // loadGoogleTagManager(); // FIXME - this is a workaround for the delayed loading of GTM
+  loadGoogleTagManager();
   loadHotjar();
 }
 
@@ -25,7 +28,7 @@ if (isSocialAllowed) {
 }
 
 // add more delayed functionality here
-loadGoogleTagManager(); // FIXME - this is a workaround for the delayed loading of GTM
+
 // Prevent the cookie banner from loading when running in library
 if (!window.location.pathname.includes('srcdoc')
   && !['localhost', 'hlx.page'].some((url) => window.location.host.includes(url))) {
@@ -102,7 +105,7 @@ async function loadFacebookPixel() {
 // linkedIn Insight Tag
 async function loadLinkedInInsightTag() {
   /* eslint-disable */
-  _linkedin_partner_id = "5894996";
+  var _linkedin_partner_id = "5894996";
   window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
   window._linkedin_data_partner_ids.push(_linkedin_partner_id);
 
