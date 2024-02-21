@@ -6,25 +6,29 @@ const COOKIES = {
   social: 'C0005:1',
 };
 
+// check if the active campaign is running
+const activeCampaign = true;
+
 // Core Web Vitals RUM collection
 sampleRUM('cwv');
 
 const cookieSetting = decodeURIComponent(document.cookie.split(';')
   .find((cookie) => cookie.trim().startsWith('OptanonConsent=')));
-const isPerformanceAllowed = cookieSetting.includes(COOKIES.performance);
-const isSocialAllowed = cookieSetting.includes(COOKIES.social);
+const isPerformanceAllowed = activeCampaign || cookieSetting.includes(COOKIES.performance);
+const isSocialAllowed = activeCampaign || cookieSetting.includes(COOKIES.social);
 
 if (isPerformanceAllowed) {
-  // loadGoogleTagManager(); // FIXME - this is a workaround for the delayed loading of GTM
+  loadGoogleTagManager();
   loadHotjar();
 }
 
 if (isSocialAllowed) {
   loadFacebookPixel();
+  loadLinkedInInsightTag();
 }
 
 // add more delayed functionality here
-loadGoogleTagManager(); // FIXME - this is a workaround for the delayed loading of GTM
+
 // Prevent the cookie banner from loading when running in library
 if (!window.location.pathname.includes('srcdoc')
   && !['localhost', 'hlx.page'].some((url) => window.location.host.includes(url))) {
@@ -75,8 +79,8 @@ async function loadHotjar() {
   /* eslint-enable */
 }
 
+// FaceBook Pixel
 async function loadFacebookPixel() {
-  // FaceBook Pixel
   /* eslint-disable */
   (function (f, b, e, v, n, t, s) {
     if (f.fbq) return; n = f.fbq = function () {
@@ -95,5 +99,24 @@ async function loadFacebookPixel() {
   ));
   fbq('init', '227457244665842');
   fbq('track', 'PageView');
+  /* eslint-enable */
+}
+
+// linkedIn Insight Tag
+async function loadLinkedInInsightTag() {
   /* eslint-disable */
+  var _linkedin_partner_id = "5894996";
+  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+  window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+
+  (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);
+  })(window.lintrk);
+  /* eslint-enable */
 }
