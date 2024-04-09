@@ -6,7 +6,9 @@ import {
   loadHeader,
   loadFooter,
 } from './lib-franklin.js';
+import { COOKIE_CHECK, COOKIE_VALUES } from './constants.js';
 
+const { performance, targeting, social } = COOKIE_VALUES;
 let placeholders = null;
 
 export async function getPlaceholders() {
@@ -37,13 +39,23 @@ export function createElement(tagName, options = {}) {
 
   if (props) {
     Object.keys(props).forEach((propName) => {
-      const value = propName === props[propName] ? '' : props[propName];
-      elem.setAttribute(propName, value);
+      const isBooleanAttribute = propName === 'allowfullscreen' || propName === 'autoplay' || propName === 'muted' || propName === 'controls';
+
+      // For boolean attributes, add the attribute without a value if it's truthy
+      if (isBooleanAttribute) {
+        if (props[propName]) {
+          elem.setAttribute(propName, '');
+        }
+      } else {
+        const value = props[propName];
+        elem.setAttribute(propName, value);
+      }
     });
   }
 
   return elem;
 }
+
 /**
  * Adds the favicon.
  * @param {string} href The favicon URL
@@ -118,6 +130,7 @@ export async function loadLazy(doc) {
 export function loadDelayed() {
   // eslint-disable-next-line import/no-cycle
   window.setTimeout(() => {
+    // eslint-disable-next-line import/no-cycle
     import('./delayed.js');
   }, 3000);
   // load anything that can be postponed to the latest here
@@ -138,18 +151,35 @@ export const removeEmptyTags = (block) => {
   });
 };
 
-export const unwrapDivs = (element) => {
-  Array.from(element.children).forEach((node) => {
-    if (node.tagName === 'DIV' && node.attributes.length === 0) {
-      while (node.firstChild) {
-        element.insertBefore(node.firstChild, node);
+export const unwrapDivs = (element, options = {}) => {
+  const stack = [element];
+  const { ignoreDataAlign = false } = options;
+
+  while (stack.length > 0) {
+    const currentElement = stack.pop();
+
+    let i = 0;
+    while (i < currentElement.children.length) {
+      const node = currentElement.children[i];
+      const attributesLength = [...node.attributes].filter((el) => {
+        if (ignoreDataAlign) {
+          return !(el.name.startsWith('data-align') || el.name.startsWith('data-valign'));
+        }
+
+        return el;
+      }).length;
+
+      if (node.tagName === 'DIV' && attributesLength === 0) {
+        while (node.firstChild) {
+          currentElement.insertBefore(node.firstChild, node);
+        }
+        node.remove();
+      } else {
+        stack.push(node);
+        i += 1;
       }
-      node.remove();
-      unwrapDivs(element);
-    } else {
-      unwrapDivs(node);
     }
-  });
+  }
 };
 
 export const variantsClassesToBEM = (blockClasses, expectedVariantsNames, blockName) => {
@@ -179,15 +209,23 @@ export const slugify = (text) => (
 
 /**
  * Check if one trust group is checked.
- * @param {String} groupName the one trust croup like: C0002
+ * @param {String} groupName the one trust group like: C0002
  */
-export function checkOneTruckGroup(groupName) {
+export function checkOneTrustGroup(groupName, cookieCheck = false) {
   const oneTrustCookie = decodeURIComponent(document.cookie.split(';').find((cookie) => cookie.trim().startsWith('OptanonConsent=')));
-  return oneTrustCookie.includes(`${groupName}:1`);
+  return cookieCheck || oneTrustCookie.includes(`${groupName}:1`);
 }
 
-export function isEloquaFormAllowed() {
-  return checkOneTruckGroup('C0004');
+export function isPerformanceAllowed() {
+  return checkOneTrustGroup(performance, COOKIE_CHECK);
+}
+
+export function isTargetingAllowed() {
+  return checkOneTrustGroup(targeting, COOKIE_CHECK);
+}
+
+export function isSocialAllowed() {
+  return checkOneTrustGroup(social, COOKIE_CHECK);
 }
 
 /**
@@ -252,4 +290,108 @@ export const adjustPretitle = (element) => {
       heading.replaceWith(pretitle);
     }
   });
+};
+
+/**
+ * Extracts the URL without query parameters of images from an array of picture elements
+ * @param {HTMLElement} images - An array of picture elements
+ * @returns {Array} Array of src strings
+ */
+export function getImageURLs(pictures) {
+  return pictures.map((picture) => {
+    const imgElement = picture.querySelector('img');
+    return imgElement.getAttribute('src').split('?')[0];
+  });
+}
+
+/**
+ * Creates a picture element based on provided image data and breakpoints
+ * @param {Array} images - Array of objects defining image data and breakpoints
+ * @param {boolean} eager - Whether to load images eagerly
+ * @param {string} alt - Alt text for the image
+ * @param {string[]|string} imageClass - Class for the image
+ * @returns {HTMLElement} The created picture element
+ */
+export function createResponsivePicture(images, eager, alt, imageClass) {
+  const picture = document.createElement('picture');
+  let fallbackWidth = '';
+  let fallbackSrc = '';
+
+  function constructSrcset(src, width, format) {
+    const baseUrl = `${src}?format=${format}&optimize=medium`;
+    return `${baseUrl}&width=${width} 1x, ${baseUrl}&width=${width * 2} 2x`;
+  }
+
+  images.forEach((image) => {
+    const originalFormat = image.src.split('.').pop();
+
+    image.breakpoints.forEach((bp) => {
+      if (!bp.media) return;
+
+      const srcsetWebp = constructSrcset(image.src, bp.width, 'webp');
+      const srcsetOriginal = constructSrcset(image.src, bp.width, originalFormat);
+
+      const webpSource = createElement('source', {
+        props: {
+          type: 'image/webp',
+          srcset: srcsetWebp,
+          media: bp.media,
+        },
+      });
+
+      const originalSource = createElement('source', {
+        props: {
+          type: `image/${originalFormat}`,
+          srcset: srcsetOriginal,
+          media: bp.media,
+        },
+      });
+
+      picture.insertBefore(originalSource, picture.firstChild);
+      picture.insertBefore(webpSource, originalSource);
+    });
+
+    const fallbackBreakpoint = image.breakpoints.find((bp) => !bp.media);
+    if (fallbackBreakpoint && !fallbackSrc) {
+      fallbackWidth = fallbackBreakpoint.width;
+      fallbackSrc = `${image.src}?width=${fallbackWidth}&format=${originalFormat}&optimize=medium`;
+    }
+  });
+
+  const img = createElement('img', {
+    classes: imageClass,
+    props: {
+      src: fallbackSrc,
+      alt,
+      loading: eager ? 'eager' : 'lazy',
+      width: fallbackWidth,
+    },
+  });
+
+  picture.appendChild(img);
+
+  return picture;
+}
+
+export const deepMerge = (originalTarget, source) => {
+  let target = originalTarget;
+  // Initialize target as an empty object if it's undefined or null
+  if (typeof target !== 'object' || target === null) {
+    target = {};
+  }
+
+  Object.keys(source).forEach((key) => {
+    const sourceValue = source[key];
+    const targetValue = target[key];
+    const sourceIsPlainObject = Object.prototype.toString.call(sourceValue) === '[object Object]';
+    const targetIsPlainObject = Object.prototype.toString.call(targetValue) === '[object Object]';
+
+    if (sourceIsPlainObject && targetIsPlainObject) {
+      target[key] = target[key] || {};
+      deepMerge(target[key], sourceValue);
+    } else {
+      target[key] = sourceValue;
+    }
+  });
+  return target;
 };
