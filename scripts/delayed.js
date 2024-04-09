@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-cycle
 import { sampleRUM, loadScript } from './lib-franklin.js';
 // eslint-disable-next-line import/no-cycle
-import { isPerformanceAllowed, isTargetingAllowed } from './common.js';
+import { isPerformanceAllowed, isSocialAllowed, isTargetingAllowed } from './common.js';
 import {
   ACCOUNT_ENGAGEMENT_TRACKING_CONSTANTS,
   HOTJAR_ID,
@@ -16,6 +16,11 @@ sampleRUM('cwv');
 if (isPerformanceAllowed()) {
   loadGoogleTagManager();
   loadHotjar();
+}
+
+if (isSocialAllowed()) {
+  loadFacebookPixel();
+  loadLinkedInInsightTag();
 }
 
 if (isTargetingAllowed()) {
@@ -85,4 +90,46 @@ async function loadAccountEngagementTracking() {
   script.text = `piAId = '${piAId}'; piCId = '${piCId}'; piHostname = '${piHostname}'; (function() { function async_load(){ var s = document.createElement('script'); s.type = 'text/javascript'; s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js'; var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c); } if(window.attachEvent) { window.attachEvent('onload', async_load); } else { window.addEventListener('load', async_load, false); } })();`;
 
   body.append(script);
+}
+
+// FaceBook Pixel
+async function loadFacebookPixel() {
+  /* eslint-disable */
+  (function (f, b, e, v, n, t, s) {
+    if (f.fbq) return; n = f.fbq = function () {
+      n.callMethod
+        ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+    };
+    if (!f._fbq)f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+    n.queue = []; t = b.createElement(e); t.async = !0;
+    t.src = v; s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s);
+  }(
+    window,
+    document,
+    'script',
+    'https://connect.facebook.net/en_US/fbevents.js',
+  ));
+  fbq('init', '227457244665842');
+  fbq('track', 'PageView');
+  /* eslint-enable */
+}
+
+// linkedIn Insight Tag
+async function loadLinkedInInsightTag() {
+  /* eslint-disable */
+  var _linkedin_partner_id = "5894996";
+  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+  window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+
+  (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);
+  })(window.lintrk);
+  /* eslint-enable */
 }

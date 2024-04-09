@@ -1,11 +1,14 @@
+// check if an active campaign is running or OneTrust needs scan the active scripts
+export const COOKIE_CHECK = true;
+
 // ONE TRUST COOKIE CONSENT
-export const DATA_DOMAIN_SCRIPT = 'bf50d0a6-e209-4fd4-ad2c-17da5f9e66a5';
+export const DATA_DOMAIN_SCRIPT = 'cfb3642f-723b-40b4-8af8-ca9252e753b4';
 
 // GOOGLE TAG MANAGER ID
-export const GTM_ID = 'GTM-NDMV8BN';
+export const GTM_ID = 'GTM-K6KJGCW';
 
 // HOTJAR ID
-export const HOTJAR_ID = 597204;
+export const HOTJAR_ID = 740766;
 
 // COOKIE Constants
 export const COOKIE_VALUES = {
