@@ -17,6 +17,7 @@ const {
   GTM_ID = false,
   HOTJAR_ID = false,
   LINKEDIN_PARTNER_ID = false,
+  COOKIE_CHECK = true,
 } = COOKIE_CONFIGS;
 
 const parsedData = JSON.parse(ACC_ENG_TRACKING);
@@ -28,17 +29,17 @@ const { piAId, piCId, piHostname } = splitData;
 sampleRUM('cwv');
 
 // COOKIE ACCEPTANCE CHECKING
-if (isPerformanceAllowed()) {
+if (!COOKIE_CHECK || isPerformanceAllowed()) {
   if (GTM_ID) loadGoogleTagManager();
   if (HOTJAR_ID) loadHotjar();
 }
 
-if (isSocialAllowed()) {
+if (!COOKIE_CHECK || isSocialAllowed()) {
   if (FACEBOOK_ID) loadFacebookPixel();
   if (LINKEDIN_PARTNER_ID) loadLinkedInInsightTag();
 }
 
-if (isTargetingAllowed()) {
+if (!COOKIE_CHECK || isTargetingAllowed()) {
   if (ACC_ENG_TRACKING) loadAccountEngagementTracking();
 }
 
