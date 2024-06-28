@@ -49,7 +49,7 @@ if (supassCookieChecks || isTargetingAllowed()) {
 
 // Prevent the cookie banner from loading when running in library
 if (!window.location.pathname.includes('srcdoc')
-  && !['hlx.page', 'hlx.live', 'aem.page', 'aem.live'].some((url) => window.location.host.includes(url))) {
+  && !['localhost', 'hlx.page', 'hlx.live', 'aem.page', 'aem.live'].some((url) => window.location.host.includes(url))) {
   loadScript('https://cdn.cookielaw.org/scripttemplates/otSDKStub.js', {
     type: 'text/javascript',
     charset: 'UTF-8',
