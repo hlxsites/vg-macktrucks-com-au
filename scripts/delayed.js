@@ -28,18 +28,20 @@ const { piAId, piCId, piHostname } = splitData;
 // Core Web Vitals RUM collection
 sampleRUM('cwv');
 
+const supassCookieChecks = COOKIE_CHECK === 'false';
+
 // COOKIE ACCEPTANCE CHECKING
-if (!COOKIE_CHECK || isPerformanceAllowed()) {
+if (supassCookieChecks || isPerformanceAllowed()) {
   if (GTM_ID) loadGoogleTagManager();
   if (HOTJAR_ID) loadHotjar();
 }
 
-if (!COOKIE_CHECK || isSocialAllowed()) {
+if (supassCookieChecks || isSocialAllowed()) {
   if (FACEBOOK_ID) loadFacebookPixel();
   if (LINKEDIN_PARTNER_ID) loadLinkedInInsightTag();
 }
 
-if (!COOKIE_CHECK || isTargetingAllowed()) {
+if (supassCookieChecks || isTargetingAllowed()) {
   if (ACC_ENG_TRACKING) loadAccountEngagementTracking();
 }
 
