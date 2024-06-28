@@ -1,53 +1,8 @@
 {
-  "truckConfiguratorUrls": {
-    "total": 2,
-    "offset": 0,
-    "limit": 2,
-    "data": [
-      {
-        "name": "JS",
-        "value": "[\"https://truckbuilder-mack-100031.onecx.prod.rapidimages.net/runtime~configurator.bundle.js\",\"https://truckbuilder-mack-100031.onecx.prod.rapidimages.net/665.bundle.js\",\"https://truckbuilder-mack-100031.onecx.prod.rapidimages.net/configurator.bundle.js\"]"
-      },
-      {
-        "name": "CSS",
-        "value": "[\"https://truckbuilder-mack-100031.onecx.prod.rapidimages.net/665.css\",\"https://truckbuilder-mack-100031.onecx.prod.rapidimages.net/configurator.css\"]"
-      }
-    ]
-  },
-  "searchUrls": {
-    "total": 2,
-    "offset": 0,
-    "limit": 2,
-    "data": [
-      {
-        "name": "SEARCH_URL_PROD",
-        "value": "https://kb3ko4nzt2.execute-api.eu-west-1.amazonaws.com/prod/search"
-      },
-      {
-        "name": "SEARCH_URL_DEV",
-        "value": "https://search-api-dev.aws.43636.vnonprod.com/search"
-      }
-    ]
-  },
-  "headerConfig": {
-    "total": 2,
-    "offset": 0,
-    "limit": 2,
-    "data": [
-      {
-        "name": "SEARCH_DISABLED",
-        "value": "false"
-      },
-      {
-        "name": "LOGIN_DISABLED",
-        "value": "false"
-      }
-    ]
-  },
   "cookieValues": {
-    "total": 9,
+    "total": 11,
     "offset": 0,
-    "limit": 9,
+    "limit": 11,
     "data": [
       {
         "name": "PERFORMANCE_COOKIE",
@@ -67,15 +22,23 @@
       },
       {
         "name": "HOTJAR_ID",
-        "value": "597204"
+        "value": "740766"
+      },
+      {
+        "name": "FACEBOOK_ID",
+        "value": "227457244665842"
+      },
+      {
+        "name": "LINKEDIN_PARTNER_ID",
+        "value": "5894996"
       },
       {
         "name": "GTM_ID",
-        "value": "GTM-NDMV8BN"
+        "value": "GTM-K6KJGCW"
       },
       {
         "name": "DATA_DOMAIN_SCRIPT",
-        "value": "bf50d0a6-e209-4fd4-ad2c-17da5f9e66a5"
+        "value": "cfb3642f-723b-40b4-8af8-ca9252e753b4"
       },
       {
         "name": "ACC_ENG_TRACKING",
@@ -102,12 +65,50 @@
       },
       {
         "name": "DATE_LANGUAGE",
-        "value": "en-US"
+        "value": "en-AU"
       },
       {
         "name": "DATE_OPTIONS",
         "value": "[\"month: long\",\"day: numeric\",\"year: numeric\"]"
       }
+    ]
+  },
+  "searchUrls": {
+    "total": 2,
+    "offset": 0,
+    "limit": 2,
+    "data": [
+      {
+        "name": "SEARCH_URL_PROD",
+        "value": "https://kb3ko4nzt2.execute-api.eu-west-1.amazonaws.com/prod/search"
+      },
+      {
+        "name": "SEARCH_URL_DEV",
+        "value": "https://search-api-dev.aws.43636.vnonprod.com/search"
+      }
+    ]
+  },
+  "headerConfig": {
+    "total": 2,
+    "offset": 0,
+    "limit": 2,
+    "data": [
+      {
+        "name": "SEARCH_DISABLED",
+        "value": "true"
+      },
+      {
+        "name": "LOGIN_DISABLED",
+        "value": "true"
+      }
+    ]
+  },
+  "truckConfiguratorUrls": {
+    "total": 0,
+    "offset": 0,
+    "limit": 0,
+    "data": [
+      
     ]
   },
   "fgrep": {
@@ -121,7 +122,7 @@
       },
       {
         "name": "GIT_REPO",
-        "value": "vg-macktrucks-com"
+        "value": "vg-macktrucks-com-au"
       },
       {
         "name": "GLOBAL_SITEMAP_URL",
@@ -129,62 +130,14 @@
       }
     ]
   },
-  "truckConfigurator": {
-    "total": 8,
-    "offset": 0,
-    "limit": 8,
-    "data": [
-      {
-        "model": "anthem",
-        "pdp path": "/trucks/anthem/",
-        "configurator path": "/trucks/anthem/configurator/#/anthem"
-      },
-      {
-        "model": "granite",
-        "pdp path": "/trucks/granite-series/",
-        "configurator path": "/trucks/granite-series/configurator/#/granite"
-      },
-      {
-        "model": "lr",
-        "pdp path": "/trucks/lr-series/",
-        "configurator path": "/trucks/lr-series/configurator/#/lr"
-      },
-      {
-        "model": "lr electric",
-        "pdp path": "/trucks/lr-electric/",
-        "configurator path": "/trucks/lr-electric/configurator/#/lr"
-      },
-      {
-        "model": "md series",
-        "pdp path": "/trucks/md/",
-        "configurator path": "/trucks/md/configurator/#/md"
-      },
-      {
-        "model": "md electric",
-        "pdp path": "/trucks/md-electric/",
-        "configurator path": "/trucks/md-electric/configurator/#/md"
-      },
-      {
-        "model": "pinnacle",
-        "pdp path": "/trucks/pinnacle-series/",
-        "configurator path": "/trucks/pinnacle-series/configurator/#/pinnacle"
-      },
-      {
-        "model": "terrapro",
-        "pdp path": "/trucks/terrapro-series/",
-        "configurator path": "/trucks/terrapro-series/configurator/#/terrapro"
-      }
-    ]
-  },
   ":version": 3,
   ":names": [
-    "truckConfiguratorUrls",
-    "searchUrls",
-    "headerConfig",
     "cookieValues",
     "magazineConfig",
-    "fgrep",
-    "truckConfigurator"
+    "searchUrls",
+    "headerConfig",
+    "truckConfiguratorUrls",
+    "fgrep"
   ],
   ":type": "multi-sheet"
 }
